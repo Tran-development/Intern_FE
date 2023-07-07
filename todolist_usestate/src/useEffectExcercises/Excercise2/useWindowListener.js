@@ -11,5 +11,7 @@ export const useWindowListener = (eventType, listerner) => {
         }
 //nếu ta sử dụng deps ở đây thì nó sẽ render liên tục khi ta di chuyển con trỏ chuột
 // vấn đề về hiệu suất !
-}, []) 
+}, [eventType]) 
 }
+
+

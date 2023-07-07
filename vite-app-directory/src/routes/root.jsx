@@ -1,4 +1,4 @@
-// dùng để hiển thị các component con tương ứng với đường dẫn được xác định bởi route.
+// dùng để hiển thị các component con tương ứng với đường dẫn được xác định bởi route. (Outlet)
 import {
     Link,
     Outlet,
