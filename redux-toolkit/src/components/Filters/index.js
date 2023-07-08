@@ -1,8 +1,8 @@
 import { Col, Row, Input, Typography, Radio, Select, Tag } from 'antd';
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
-import { searchFilterChange, statusFilterChange, prioritiesFilterChange } from '../../redux/actions';
-
+// import { searchFilterChange, statusFilterChange, prioritiesFilterChange } from '../../redux/actions';
+import {filtersSlide} from './filterSlice';
 const { Search } = Input;
 
 export default function Filters() {
@@ -15,20 +15,20 @@ export default function Filters() {
 
   const handleSearchTextChange = (e) => {
     setSearchText(e.target.value)
-    dispatch(searchFilterChange(e.target.value))
+    dispatch(filtersSlide.actions.searchFilterChange(e.target.value))
   }
 
   const handleSelectFilterChange = (e) => {
     setSelectFilterChange(e.target.value)
     // console.log(e.target.value);
-    dispatch(statusFilterChange(e.target.value))
+    dispatch(filtersSlide.actions.statusFilterChange(e.target.value))
   }
 
   const handlePriorityFilterChange = (value) => {
     // tại vì đang sd các components từ antd design, ta phải luôn check xem nó trả về cái gì
     // như ở đây là multi select nên nó sẽ trả về array vs cái value ở phía trong đó 
     setPriorityFilterChange(value)
-    dispatch(prioritiesFilterChange(value))
+    dispatch(filtersSlide.actions.prioritiesFilterChange(value))
   }
 
   return (
